@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('./assets/fonts/fonnts.com-SuisseIntl-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('./assets/fonts/fonnts.com-Suisse_Intl_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('./assets/fonts/fonnts.com-Suisse_Intl_Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('./assets/fonts/fonnts.com-Suisse_Intl_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Palette - Professional Standard */
+  --bg-page: #ffffff;
+  --bg-subtle: #f8fafc;
+  
+  /* Primary Identity */
+  --brand-blue: #046BD2;
+  --brand-blue-dark: #0f172a; /* Slate 900 for text/headings */
+  
+  /* Action Color */
+  --brand-orange: #FF6B35;
+  --brand-orange-hover: #e55a2b;
+  
+  /* Text Architecture */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  
+  /* Spacing */
+  --section-spacing: 6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 20px; /* Base for all sections */
+}
+
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Suisse Intl', 'Inter', sans-serif;
+  letter-spacing: -0.02em; /* Tight corporate tracking */
+}
+
+@layer components {
+  /* Ultra-Premium Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-[15px] transition-all duration-200 text-white shadow-sm;
+    background-color: var(--brand-orange);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--brand-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-[15px] transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50;
+  }
+
+  /* Corporate Card */
+  .card-pro {
+    @apply bg-white border border-slate-200 rounded-xl transition-shadow duration-300;
+  }
+  .card-pro:hover {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@layer utilities {
+  .font-suisse {
+    font-family: 'Suisse Intl', sans-serif;
+  }
+  
+  /* Navigation Blur */
+  .nav-blur {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  /* Subtle Gradient Text */
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #0f172a 0%, #046BD2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
