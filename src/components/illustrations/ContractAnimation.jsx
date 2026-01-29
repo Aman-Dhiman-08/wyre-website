@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import contractPrime from '../../assets/contract_prime.png';
+import contractSub from '../../assets/contract_sub.jpg';
+import contractChangeOrder from '../../assets/contract_change_order.jpg';
+import contractPaymentApp from '../../assets/contract_payment_app.jpg';
 
 // --- Configuration ---
 const CARD_HEIGHT = 450; 
@@ -12,7 +16,7 @@ const TOTAL_CYCLE = SCROLL_SPEED + READ_TIME + SCAN_TIME;
 // --- Assets (Contract Data) ---
 const PAGES = [
   { 
-      src: '/assets/contract_prime.png',
+      src: contractPrime,
       name: 'Prime Contract',
       highlights: [
           { top: '27.5%', left: '7%', width: '42%', height: '18%', type: 'risk', delay: 0.8 }, 
@@ -22,7 +26,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/contract_sub.jpg',
+      src: contractSub,
       name: 'Subcontractor Agreement',
       highlights: [
           { top: '48%', left: '60%', width: '32%', height: '15%', type: 'risk', delay: 0.8 }, 
@@ -34,7 +38,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/contract_change_order.jpg',
+      src: contractChangeOrder,
       name: 'Change Order',
       highlights: [
           { top: '35%', left: '50.5%', width: '41%', height: '26%', type: 'risk', delay: 0.8 }, 
@@ -44,7 +48,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/contract_payment_app.jpg',
+      src: contractPaymentApp,
       name: 'Application for Payment',
       highlights: [
           { top: '15%', left: '42.5%', width: '51%', height: '58%', type: 'risk', delay: 0.8 }, 

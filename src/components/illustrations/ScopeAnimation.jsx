@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import pageCover from '../../assets/page_cover.png';
+import pageFoundation from '../../assets/page_foundation.png';
+import pageLevel1 from '../../assets/page_level1.png';
+import pageElevations from '../../assets/page_elevations.png';
+import pageDetails from '../../assets/page_details.png';
 
 // --- Configuration ---
 const CARD_HEIGHT = 340; 
@@ -10,10 +15,9 @@ const READ_TIME = 0.5;
 const TOTAL_CYCLE = SCROLL_SPEED + READ_TIME + SCAN_TIME; 
 
 // --- Assets ---
-// --- Assets ---
 const PAGES = [
   { 
-      src: '/assets/page_cover.png',
+      src: pageCover,
       name: 'Project Cover',
       // Coordinates for extraction
       highlights: [
@@ -30,7 +34,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_foundation.png',
+      src: pageFoundation,
       name: 'Foundation Plan',
       highlights: [
           { top: '22%', left: '18%', width: '8%', height: '8%', type: 'scope', delay: 0.8 }, // Footing -> Cast In Place
@@ -46,7 +50,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_level1.png',
+      src: pageLevel1,
       name: 'Floor Plan L1',
       highlights: [
           { top: '25%', left: '15%', width: '12%', height: '10%', type: 'scope', delay: 0.8 }, // Room -> Flooring
@@ -62,7 +66,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_elevations.png',
+      src: pageElevations,
       name: 'Elevations',
       highlights: [
           { top: '15%', left: '22%', width: '8%', height: '8%', type: 'scope', delay: 0.8 }, // Window -> Glazing
@@ -78,7 +82,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_details.png',
+      src: pageDetails,
       name: 'Details & Schedules',
       highlights: [
           { top: '18%', left: '62%', width: '28%', height: '2.5%', type: 'scope', delay: 0.8 }, // Sched -> Doors

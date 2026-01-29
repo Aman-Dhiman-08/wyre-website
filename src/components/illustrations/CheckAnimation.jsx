@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import pageCover from '../../assets/page_cover.png';
+import pageFoundation from '../../assets/page_foundation.png';
+import pageLevel1 from '../../assets/page_level1.png';
+import pageElevations from '../../assets/page_elevations.png';
+import pageDetails from '../../assets/page_details.png';
 
 // --- Configuration ---
 const CARD_HEIGHT = 340; 
@@ -12,7 +17,7 @@ const TOTAL_CYCLE = SCROLL_SPEED + READ_TIME + SCAN_TIME;
 // --- Assets (Issues Data) ---
 const PAGES = [
   { 
-      src: '/assets/page_cover.png',
+      src: pageCover,
       name: 'Project Cover',
       highlights: [
           { top: '65%', left: '15%', width: '15%', height: '15%', type: 'issue', delay: 0.8 }, // Map Issue
@@ -24,7 +29,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_foundation.png',
+      src: pageFoundation,
       name: 'Foundation Plan',
       highlights: [
           { top: '22%', left: '18%', width: '12%', height: '12%', type: 'issue', delay: 0.8 }, // Footing Issue
@@ -36,7 +41,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_level1.png',
+      src: pageLevel1,
       name: 'Floor Plan L1',
       highlights: [
           { top: '28%', left: '42%', width: '8%', height: '10%', type: 'issue', delay: 0.8 }, // Door Swing
@@ -48,7 +53,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_elevations.png',
+      src: pageElevations,
       name: 'Elevations',
       highlights: [
           { top: '15%', left: '22%', width: '25%', height: '15%', type: 'issue', delay: 0.8 }, // Window Height
@@ -60,7 +65,7 @@ const PAGES = [
       ]
   },
   { 
-      src: '/assets/page_details.png',
+      src: pageDetails,
       name: 'Details & Schedules',
       highlights: [
           { top: '15%', left: '15%', width: '15%', height: '25%', type: 'issue', delay: 0.8 }, // Wall Section
