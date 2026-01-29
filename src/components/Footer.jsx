@@ -1,12 +1,19 @@
+import { Linkedin, Twitter, Instagram } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = {
-    Product: ['Wyre Scopes', 'Wyre Check', 'Wyre Contracts', 'Pricing', 'Enterprise'],
-    Company: ['About Us', 'Careers', 'Contact', 'Blog']
+    Products: ['Wyre Scopes', 'Wyre Check', 'Wyre Contracts'],
+    Company: ['About Us', 'Careers', 'Contact']
   };
+
+  const socialLinks = [
+    { icon: <Twitter size={18} />, label: 'Twitter', href: '#' },
+    { icon: <Linkedin size={18} />, label: 'LinkedIn', href: '#' },
+    { icon: <Instagram size={18} />, label: 'Instagram', href: '#' }
+  ];
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 py-16 lg:py-24">
@@ -21,9 +28,15 @@ export default function Footer() {
               We help general contractors automate scope review, risk analysis, and bid leveling.
             </p>
             <div className="mt-8 flex gap-4">
-                 {/* Social Icons Placeholder - simplified circles */}
-                 {[1,2,3].map(i => (
-                     <div key={i} className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#046BD2] transition-colors cursor-pointer" />
+                 {socialLinks.map(({ icon, label, href }) => (
+                     <a 
+                        key={label}
+                        href={href}
+                        aria-label={label}
+                        className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-[#046BD2] hover:border-[#046BD2] hover:text-white transition-all duration-300"
+                     >
+                        {icon}
+                     </a>
                  ))}
             </div>
           </div>
@@ -47,11 +60,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Address</h4>
             <div className="text-sm text-slate-400 leading-relaxed font-light">
-              <p>548 Market St #4578</p>
-              <p>San Francisco, CA 94104</p>
+              <p>23710 Schooler Plz Suite 2070,</p>
+              <p>Brambleton, VA 20148</p>
               <p className="mt-4">United States</p>
-              <a href="mailto:hello@wyreai.io" className="block mt-4 text-[#046BD2] hover:text-white transition-colors">
-                hello@wyreai.io
+              <a href="mailto:info@wyreai.io" className="block mt-4 text-[#046BD2] hover:text-white transition-colors">
+                info@wyreai.io
               </a>
             </div>
           </div>

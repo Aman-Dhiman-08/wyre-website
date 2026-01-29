@@ -53,7 +53,7 @@ export default function Contact() {
                     </div>
                     <div>
                         <h4 className="text-lg font-bold text-slate-900 mb-1">Email Us</h4>
-                        <a href="mailto:hello@wyreai.io" className="text-slate-500 hover:text-[#046BD2] transition-colors">hello@wyreai.io</a>
+                        <a href="mailto:info@wyreai.io" className="text-slate-500 hover:text-[#046BD2] transition-colors">info@wyreai.io</a>
                     </div>
                 </div>
                 
@@ -66,7 +66,7 @@ export default function Contact() {
                     </div>
                     <div>
                         <h4 className="text-lg font-bold text-slate-900 mb-1">Headquarters</h4>
-                        <p className="text-slate-500">San Francisco, CA</p>
+                        <p className="text-slate-500">Brambleton, VA</p>
                     </div>
                 </div>
             </div>

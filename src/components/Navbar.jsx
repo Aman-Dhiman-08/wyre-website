@@ -51,7 +51,12 @@ export default function Navbar() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <a href="#login" className="text-[15px] font-medium text-slate-900 hover:text-[#046BD2] transition-colors">
+              <a 
+                href="https://scopebuilder.wyreai.io/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] font-medium text-slate-900 hover:text-[#046BD2] transition-colors"
+              >
                 Log In
               </a>
               <a
@@ -98,7 +103,14 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4">
-                <a href="#login" className="text-lg font-medium text-slate-600">Log In</a>
+                <a 
+                  href="https://scopebuilder.wyreai.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-slate-600"
+                >
+                  Log In
+                </a>
                 <a
                   href="#contact"
                   className="w-full py-3.5 rounded-lg bg-[#FF6B35] text-white text-center font-bold"
