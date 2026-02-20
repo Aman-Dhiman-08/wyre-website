@@ -109,7 +109,7 @@ const PAGES = [
 // --- Brand Palette ---
 const COLORS = {
   scope: { main: '#FF6B35', bg: 'rgba(255, 107, 53, 0.15)', glow: 'rgba(255, 107, 53, 0.4)' }, // Orange
-  bid: { main: '#046BD2', bg: 'rgba(4, 107, 210, 0.15)', glow: 'rgba(4, 107, 210, 0.4)' }, // Blue
+  bid: { main: '#004f8a', bg: 'rgba(0, 79, 138, 0.15)', glow: 'rgba(0, 79, 138, 0.4)' }, // Blue
   issues: { main: '#a855f7', bg: 'rgba(168, 85, 247, 0.15)', glow: 'rgba(168, 85, 247, 0.4)' }, // Purple
   material: { main: '#3b82f6', bg: 'rgba(59, 130, 246, 0.15)', glow: 'rgba(59, 130, 246, 0.4)' }, // Blue
   detect: { main: '#FF6B35', bg: 'rgba(255, 107, 53, 0.15)' },
