@@ -46,19 +46,19 @@ export default function Contact() {
 
             <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-[#046BD2]">
+                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-[#004f8a]">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
                     <div>
                         <h4 className="text-lg font-bold text-slate-900 mb-1">Email Us</h4>
-                        <a href="mailto:info@wyreai.io" className="text-slate-500 hover:text-[#046BD2] transition-colors">info@wyreai.io</a>
+                        <a href="mailto:info@wyreai.io" className="text-slate-500 hover:text-[#004f8a] transition-colors">info@wyreai.io</a>
                     </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-[#046BD2]">
+                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-[#004f8a]">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -88,7 +88,7 @@ export default function Contact() {
                             type="text" 
                             id="name"
                             name="name"
-                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#046BD2] focus:ring-1 focus:ring-[#046BD2] outline-none transition-all bg-white"
+                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                             placeholder="John Doe"
                         />
                     </div>
@@ -98,7 +98,7 @@ export default function Contact() {
                             type="email" 
                             id="email"
                             name="email"
-                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#046BD2] focus:ring-1 focus:ring-[#046BD2] outline-none transition-all bg-white"
+                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                             placeholder="john@company.com"
                         />
                     </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                         type="text" 
                         id="company"
                         name="company"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#046BD2] focus:ring-1 focus:ring-[#046BD2] outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                         placeholder="Construction Co."
                     />
                 </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                         id="message"
                         name="message"
                         rows={4}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#046BD2] focus:ring-1 focus:ring-[#046BD2] outline-none transition-all bg-white resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white resize-none"
                         placeholder="Tell us about your needs..."
                     />
                 </div>

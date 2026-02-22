@@ -23,17 +23,36 @@ export default function Footer() {
             <a href="#home" className="inline-flex items-center gap-2 mb-6">
               <Logo className="h-8 w-auto" forceColor="white" />
             </a>
-            <p className="text-slate-400 leading-relaxed max-w-sm text-sm">
+            <p className="text-slate-400 leading-relaxed max-w-sm text-sm mb-6">
               The AI-Powered Preconstruction Risk Management Platform.
               Automate scope extraction, identify document conflicts, and protect your margins.
             </p>
-            <div className="mt-8 flex gap-4">
+
+            {/* Newsletter Subscription */}
+            <div className="mb-6">
+              <p className="text-slate-400 text-sm mb-3">Subscribe to our newsletter</p>
+              <form className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all text-sm"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-[#FF6B35] hover:bg-[#e55a2b] text-white font-semibold rounded-lg transition-colors text-sm"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            <div className="flex gap-4">
               {socialLinks.map(({ icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-[#046BD2] hover:border-[#046BD2] hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-[#004f8a] hover:border-[#004f8a] hover:text-white transition-all duration-300"
                 >
                   {icon}
                 </a>
@@ -63,7 +82,7 @@ export default function Footer() {
               <p>23710 Schooler Plz Suite 2070,</p>
               <p>Brambleton, VA 20148</p>
               <p className="mt-4">United States</p>
-              <a href="mailto:info@wyreai.io" className="block mt-4 text-[#046BD2] hover:text-white transition-colors">
+              <a href="mailto:info@wyreai.io" className="block mt-4 text-[#004f8a] hover:text-white transition-colors">
                 info@wyreai.io
               </a>
             </div>

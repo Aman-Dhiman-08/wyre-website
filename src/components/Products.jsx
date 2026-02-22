@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScopeAnimation from './illustrations/ScopeAnimation';
 import CheckAnimation from './illustrations/CheckAnimation';
-import ContractAnimation from './illustrations/ContractAnimation';
+// import ContractAnimation from './illustrations/ContractAnimation';
 
 const products = [
     {
@@ -12,7 +12,7 @@ const products = [
         description: "Analyze your entire document set, identify every scope of work, and deliver organized, traceable scope packages - ready for your team to review and refine.",
         cta: "From Bidding to Buyout, we’ve got you covered.",
         features: ['Scope Identification', 'Bid Item Generation', 'Color Coded References', 'Scope Matrix'],
-        color: '#046BD2',
+        color: '#004f8a',
         component: <ScopeAnimation />
     },
     {
@@ -24,17 +24,18 @@ const products = [
         features: ['Auto-drafted RFIs', 'Document References', 'Advanced Search'],
         color: '#FF6B35',
         component: <CheckAnimation />
-    },
-    {
-        id: 'contracts',
-        title: 'Wyre Contracts',
-        tagline: 'Risk Analysis & Negotiation Leverage',
-        description: "Instantly analyze construction contracts to identify high-risk liability clauses and improved negotiation leverage. Our AI reviews contract language to ensure you're protected.",
-        cta: "Protect your margins. Protect your business.",
-        features: ['Risk Identification', 'Clause Comparison', 'Negotiation Insights'],
-        color: '#8B5CF6',
-        component: <ContractAnimation />
     }
+    // Wyre Contracts - Hidden for now
+    // {
+    //     id: 'contracts',
+    //     title: 'Wyre Contracts',
+    //     tagline: 'Risk Analysis & Negotiation Leverage',
+    //     description: "Instantly analyze construction contracts to identify high-risk liability clauses and improved negotiation leverage. Our AI reviews contract language to ensure you're protected.",
+    //     cta: "Protect your margins. Protect your business.",
+    //     features: ['Risk Identification', 'Clause Comparison', 'Negotiation Insights'],
+    //     color: '#8B5CF6',
+    //     component: <ContractAnimation />
+    // }
 ];
 
 export default function Products() {

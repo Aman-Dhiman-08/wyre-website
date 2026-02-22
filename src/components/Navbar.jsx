@@ -40,7 +40,7 @@ export default function Navbar() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  whileHover={{ y: -1, color: '#046BD2' }}
+                  whileHover={{ y: -1, color: '#004f8a' }}
                   whileTap={{ y: 0 }}
                   className="text-[15px] font-medium text-slate-600 transition-colors"
                 >
@@ -55,7 +55,7 @@ export default function Navbar() {
                 href="https://scopebuilder.wyreai.io/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] font-medium text-slate-900 hover:text-[#046BD2] transition-colors"
+                className="text-[15px] font-medium text-slate-900 hover:text-[#004f8a] transition-colors"
               >
                 Log In
               </a>

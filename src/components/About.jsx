@@ -50,12 +50,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50/80 backdrop-blur rounded-full mb-6 border border-blue-100">
-               <span className="w-1.5 h-1.5 bg-[#046BD2] rounded-full animate-pulse" />
-               <span className="text-xs font-bold text-[#046BD2] uppercase tracking-wide">Who We Are</span>
+               <span className="w-1.5 h-1.5 bg-[#004f8a] rounded-full animate-pulse" />
+               <span className="text-xs font-bold text-[#004f8a] uppercase tracking-wide">Who We Are</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-suisse tracking-tight uppercase leading-none">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#046BD2] to-[#60a5fa]">Wyre AI</span>
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004f8a] to-[#0066a8]">Wyre AI</span>
             </h2>
             
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-light">
@@ -69,13 +69,13 @@ export default function About() {
 
             <div className="mt-12 grid grid-cols-2 gap-8 border-t border-slate-100 pt-8">
                 <div>
-                   <div className="text-4xl font-bold text-[#046BD2] mb-1 tracking-tighter flex items-center">
+                   <div className="text-4xl font-bold text-[#004f8a] mb-1 tracking-tighter flex items-center">
                      <Counter value="1000" suffix="M+" />
                    </div>
                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">Pages Processed</div>
                 </div>
                 <div>
-                   <div className="text-4xl font-bold text-[#046BD2] mb-1 tracking-tighter flex items-center">
+                   <div className="text-4xl font-bold text-[#004f8a] mb-1 tracking-tighter flex items-center">
                      <Counter value="99.9" suffix="%" />
                    </div>
                    <div className="text-xs font-bold uppercase tracking-widest text-slate-400">Uptime</div>
@@ -83,9 +83,9 @@ export default function About() {
             </div>
             
             <div className="mt-10">
-              <a href="#contact" className="group inline-flex items-center gap-2 text-[#046BD2] font-semibold text-sm uppercase tracking-wide">
-                <span className="border-b border-transparent group-hover:border-[#046BD2] transition-colors">Meet the Team</span>
-                <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#046BD2] group-hover:text-white transition-all">
+              <a href="#contact" className="group inline-flex items-center gap-2 text-[#004f8a] font-semibold text-sm uppercase tracking-wide">
+                <span className="border-b border-transparent group-hover:border-[#004f8a] transition-colors">Meet the Team</span>
+                <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#004f8a] group-hover:text-white transition-all">
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

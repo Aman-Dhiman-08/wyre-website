@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import constructionHero from '../assets/construction-hero-light.png';
+import mcnImg from '../assets/MCN.png';
+import shockeyImg from '../assets/Shocky.png';
+import dciImg from '../assets/DCI.png';
 
 export default function Hero() {
     return (
-        <section id="home" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-white selection:bg-[#046BD2] selection:text-white">
+        <section id="home" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-white selection:bg-[#004f8a] selection:text-white">
             {/* Background - Video & Sophisticated Overlays */}
             <div className="absolute inset-0 overflow-hidden">
                 <img
@@ -18,7 +21,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/40 opacity-20" />
 
                 {/* Refined Grid Overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#046BD2_1px,transparent_1px),linear-gradient(to_bottom,#046BD2_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)] opacity-[0.05]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#004f8a_1px,transparent_1px),linear-gradient(to_bottom,#004f8a_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)] opacity-[0.05]" />
             </div>
 
             <div className="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-8">
@@ -33,9 +36,9 @@ export default function Hero() {
                     >
                         <div className="flex h-2 w-2 relative">
                             <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></div>
-                            <div className="relative inline-flex rounded-full h-2 w-2 bg-[#046BD2]"></div>
+                            <div className="relative inline-flex rounded-full h-2 w-2 bg-[#004f8a]"></div>
                         </div>
-                        <span className="text-[12px] font-bold text-[#046BD2] uppercase tracking-[0.1em]">
+                        <span className="text-[12px] font-bold text-[#004f8a] uppercase tracking-[0.1em]">
                             The New Standard in Preconstruction
                         </span>
                     </motion.div>
@@ -85,14 +88,14 @@ export default function Hero() {
                             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                         </a>
 
-                        <a href="#products" className="inline-flex items-center justify-center min-w-[200px] h-14 bg-white/80 backdrop-blur-md border border-slate-200 text-slate-700 font-bold rounded-xl hover:border-blue-200 hover:text-[#046BD2] transition-all duration-300 group relative overflow-hidden shadow-sm">
+                        <a href="#products" className="inline-flex items-center justify-center min-w-[200px] h-14 bg-white/80 backdrop-blur-md border border-slate-200 text-slate-700 font-bold rounded-xl hover:border-blue-200 hover:text-[#004f8a] transition-all duration-300 group relative overflow-hidden shadow-sm">
                             <div className="relative z-10 flex items-center transition-transform group-hover:scale-105">
                                 Explore Products
                                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
-                            <div className="absolute inset-0 bg-[#046BD2]/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+                            <div className="absolute inset-0 bg-[#004f8a]/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                         </a>
                     </motion.div>
 
@@ -114,7 +117,7 @@ export default function Hero() {
                                     repeat: Infinity,
                                     ease: "easeInOut"
                                 }}
-                                className="absolute w-full h-full bg-[#046BD2]"
+                                className="absolute w-full h-full bg-[#004f8a]"
                             />
                         </div>
                     </motion.div>
@@ -127,9 +130,13 @@ export default function Hero() {
                         className="mt-16 w-full pt-12 border-t border-slate-100/50"
                     >
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-12">Trusted by Global Infrastructure Leaders</p>
-                        <div className="flex flex-wrap justify-center items-center gap-x-20 gap-y-10 grayscale-[0.8] opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-700">
-                            {['DPR', 'TURNER', 'AECOM', 'SKANSKA', 'PCL'].map((logo) => (
-                                <span key={logo} className="text-2xl font-bold font-suisse tracking-tighter text-slate-900 cursor-default hover:text-[#046BD2] transition-colors">{logo}</span>
+                        <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 grayscale-[0.8] opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                            {[
+                                { name: 'DCI', src: dciImg, h: "h-14" },
+                                { name: 'Howard Shockey', src: shockeyImg, h: "h-12" },
+                                { name: 'MCN Build', src: mcnImg, h: "h-12" }
+                            ].map((logo) => (
+                                <img key={logo.name} src={logo.src} alt={logo.name} className={`${logo.h} w-auto object-contain transition-all duration-300 hover:scale-105`} />
                             ))}
                         </div>
                     </motion.div>

@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const features = [
   {
-    title: "Wyre Scopes",
-    desc: "Automatically transform construction documents into structured, traceable scopes.",
+    title: "Planning",
+    desc: "Analyze plans & identify scopes instantly.",
     bg: "bg-orange-50",
-    text: "text-brand-orange",
+    text: "text-[#FF6B35]",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -14,10 +14,10 @@ const features = [
     )
   },
   {
-    title: "Wyre Check",
-    desc: "AI-assisted validation that identifies conflicts between plans and specifications.",
+    title: "Workflow",
+    desc: "Streamline tasks & remove manual entry.",
     bg: "bg-blue-50",
-    text: "text-brand-blue",
+    text: "text-[#004f8a]",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -25,8 +25,8 @@ const features = [
     )
   },
   {
-    title: "Risk Analysis",
-    desc: "Identify high-risk liability clauses and improve negotiation leverage instantly.",
+    title: "Decisions",
+    desc: "Turn complex data into simple insights.",
     bg: "bg-purple-50",
     text: "text-purple-600",
     icon: (
@@ -62,13 +62,13 @@ export default function WhatWeDo() {
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Our Approach</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 font-suisse leading-tight">
-              Built for modern <br /> <span className="text-[#046BD2]">preconstruction.</span>
+              Built for modern <br /> <span className="text-[#004f8a]">preconstruction.</span>
             </h2>
             <p className="text-slate-500 leading-relaxed text-lg font-light mb-8">
               We replace manual highlighter workflows with intelligent automation that learns from your documents, getting smarter with every project.
             </p>
 
-            <a href="#contact" className="text-[#046BD2] font-semibold border-b border-[#046BD2]/30 hover:border-[#046BD2] transition-colors pb-0.5">
+            <a href="#contact" className="text-[#004f8a] font-semibold border-b border-[#004f8a]/30 hover:border-[#004f8a] transition-colors pb-0.5">
               Learn about our technology
             </a>
           </motion.div>
