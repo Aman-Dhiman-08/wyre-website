@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration - Set these in your .env file
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,15 +14,43 @@ export default function Contact() {
     company: '',
     message: ''
   });
+  const [status, setStatus] = useState({ loading: false, success: false, error: null });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic would go here
-    console.log('Form submitted:', formData);
+    setStatus({ loading: true, success: false, error: null });
+
+    // Template parameters - customize your email content here
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      company: formData.company,
+      message: formData.message,
+      to_name: 'Wyre AI Team',
+      to_email: 'info@amandhiamn.info',
+      subject: `New Contact from ${formData.name} - ${formData.company || 'Wyre AI'}`,
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus({ loading: false, success: true, error: null });
+      setFormData({ name: '', email: '', company: '', message: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus({ loading: false, success: false, error: null }), 5000);
+    } catch (error) {
+      setStatus({ loading: false, success: false, error: 'Failed to send message. Please try again.' });
+    }
   };
 
   return (
@@ -84,32 +118,40 @@ export default function Contact() {
                 <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-semibold text-slate-900">Name</label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             id="name"
                             name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
                             className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                             placeholder="John Doe"
                         />
                     </div>
                     <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-semibold text-slate-900">Work Email</label>
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             id="email"
                             name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
                             className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                             placeholder="john@company.com"
                         />
                     </div>
                 </div>
-                
+
                 <div className="space-y-2">
                     <label htmlFor="company" className="text-sm font-semibold text-slate-900">Company</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         id="company"
                         name="company"
+                        value={formData.company}
+                        onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white"
                         placeholder="Construction Co."
                     />
@@ -117,17 +159,36 @@ export default function Contact() {
 
                 <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-semibold text-slate-900">Message</label>
-                    <textarea 
+                    <textarea
                         id="message"
                         name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                         rows={4}
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#004f8a] focus:ring-1 focus:ring-[#004f8a] outline-none transition-all bg-white resize-none"
                         placeholder="Tell us about your needs..."
                     />
                 </div>
 
-                <button type="submit" className="w-full btn-primary py-4 text-base">
-                    Send Message
+                {status.success && (
+                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+                        Message sent successfully! We'll get back to you soon.
+                    </div>
+                )}
+
+                {status.error && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                        {status.error}
+                    </div>
+                )}
+
+                <button
+                    type="submit"
+                    disabled={status.loading}
+                    className="w-full btn-primary py-4 text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {status.loading ? 'Sending...' : 'Send Message'}
                 </button>
             </form>
           </motion.div>
