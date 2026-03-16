@@ -122,4 +122,19 @@ h1, h2, h3, h4, h5, h6 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Logo Carousel */
+  .animate-scroll {
+    animation: scroll 25s linear infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

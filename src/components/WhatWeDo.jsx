@@ -1,36 +1,38 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const features = [
   {
-    title: "Planning",
-    desc: "Analyze plans & identify scopes instantly.",
+    title: "Smarter Scoping",
+    desc: "Instantly analyze drawings & specifications & identify scopes",
     bg: "bg-orange-50",
     text: "text-[#FF6B35]",
+    border: "border-orange-100",
     icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
       </svg>
     )
   },
   {
-    title: "Workflow",
-    desc: "Streamline tasks & remove manual entry.",
+    title: "Workflow Optimization",
+    desc: "Streamline tasks, cut down on manual entry and save hours.",
     bg: "bg-blue-50",
     text: "text-[#004f8a]",
+    border: "border-blue-100",
     icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     )
   },
   {
-    title: "Decisions",
-    desc: "Turn complex data into simple insights.",
+    title: "Better Decisions, Faster",
+    desc: "Turn complex data into simple, actionable insights.",
     bg: "bg-purple-50",
     text: "text-purple-600",
+    border: "border-purple-100",
     icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     )
@@ -38,62 +40,50 @@ const features = [
 ];
 
 export default function WhatWeDo() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
   return (
-    <section ref={containerRef} id="what-we-do" className="py-32 bg-white relative overflow-hidden">
+    <section id="what-we-do" className="py-16 lg:py-24 bg-white border-t border-slate-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-1 pr-8"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-slate-400 rounded-full" />
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Our Approach</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 font-suisse leading-tight">
-              Built for modern <br /> <span className="text-[#004f8a]">preconstruction.</span>
-            </h2>
-            <p className="text-slate-500 leading-relaxed text-lg font-light mb-8">
-              We replace manual highlighter workflows with intelligent automation that learns from your documents, getting smarter with every project.
-            </p>
-
-            <a href="#contact" className="text-[#004f8a] font-semibold border-b border-[#004f8a]/30 hover:border-[#004f8a] transition-colors pb-0.5">
-              Learn about our technology
-            </a>
-          </motion.div>
-
-          <div className="md:col-span-2 grid sm:grid-cols-3 gap-6">
-            {features.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 0.6, ease: "easeOut" }}
-                whileHover={{ y: -10 }}
-                className="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-100 transition-all duration-300 group cursor-default"
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl ${item.bg} ${item.text} flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+        {/* Centered Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-[#FF6B35] rounded-full" />
+            <span className="text-xs font-bold text-[#FF6B35] uppercase tracking-wide">What We Do</span>
           </div>
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-[#E8632B] mb-4 font-suisse leading-tight italic">
+            AI tools built for the way you <span className="underline">actually work!</span>
+          </h2>
+          <p className="text-lg text-slate-700 max-w-2xl mx-auto font-light">
+            Purpose-built intelligence that fits into your existing preconstruction workflow.
+          </p>
+        </motion.div>
+
+        {/* Feature Cards - Full Width */}
+        <div className="grid sm:grid-cols-3 gap-8">
+          {features.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+              whileHover={{ y: -8 }}
+              className={`p-8 rounded-2xl border ${item.border} bg-white shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group cursor-default`}
+            >
+              <div
+                className={`w-14 h-14 rounded-xl ${item.bg} ${item.text} flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}
+              >
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+              <p className="text-base text-slate-500 leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -5,8 +5,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Products: ['Wyre Scopes', 'Wyre Check', 'Wyre Contracts'],
-    Company: ['About Us', 'Careers', 'Contact']
+    Products: ['Wyre Scopes', 'Wyre Check'],
+    Company: ['About Us', 'Book a Demo', 'Contact Us']
   };
 
   const socialLinks = [
@@ -23,7 +23,7 @@ export default function Footer() {
             <a href="#home" className="inline-flex items-center gap-2 mb-6">
               <Logo className="h-8 w-auto" forceColor="white" />
             </a>
-            <p className="text-slate-400 leading-relaxed max-w-sm text-sm mb-6">
+            <p className="text-slate-300 leading-relaxed max-w-sm text-sm mb-6">
               The AI-Powered Preconstruction Risk Management Platform.
               Automate scope extraction, identify document conflicts, and protect your margins.
             </p>
@@ -44,19 +44,7 @@ export default function Footer() {
                   Subscribe
                 </button>
               </form>
-            </div>
-
-            <div className="flex gap-4">
-              {socialLinks.map(({ icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-[#004f8a] hover:border-[#004f8a] hover:text-white transition-all duration-300"
-                >
-                  {icon}
-                </a>
-              ))}
+              <p className="text-slate-400 text-xs mt-3">No spam. Just the good stuff. You can unsubscribe anytime.</p>
             </div>
           </div>
 
@@ -66,7 +54,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {links.map(link => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
+                    <a href="#" className="text-sm text-slate-300 hover:text-white transition-colors">
                       {link}
                     </a>
                   </li>
@@ -77,13 +65,16 @@ export default function Footer() {
 
           {/* Address Section */}
           <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Address</h4>
-            <div className="text-sm text-slate-400 leading-relaxed font-light">
+            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Office</h4>
+            <div className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-white font-semibold">Headquarters</p>
+              <p>Washington D.C.</p>
+              <p className="text-white font-semibold mt-4">Address</p>
               <p>23710 Schooler Plz Suite 2070,</p>
               <p>Brambleton, VA 20148</p>
-              <p className="mt-4">United States</p>
-              <a href="mailto:info@wyreai.io" className="block mt-4 text-[#004f8a] hover:text-white transition-colors">
-                info@wyreai.io
+              <p className="mt-2">United States</p>
+              <a href="mailto:sales@wyreai.io" className="block mt-4 text-[#FF6B35] hover:text-white transition-colors">
+                sales@wyreai.io
               </a>
             </div>
           </div>

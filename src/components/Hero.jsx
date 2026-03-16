@@ -3,10 +3,15 @@ import constructionHero from '../assets/construction-hero-light.png';
 import mcnImg from '../assets/MCN.png';
 import shockeyImg from '../assets/Shocky.png';
 import dciImg from '../assets/DCI.png';
+import bekImg from '../assets/bek-removebg-preview.png';
+import carlsonImg from '../assets/carlson-removebg-preview.png';
+import kulkaImg from '../assets/kulka-removebg-preview.png';
+import millerDavisImg from '../assets/miller_Davis-removebg-preview.png';
+import winmarImg from '../assets/winmar-removebg-preview.png';
 
 export default function Hero() {
     return (
-        <section id="home" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-white selection:bg-[#004f8a] selection:text-white">
+        <section id="home" className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-white selection:bg-[#004f8a] selection:text-white">
             {/* Background - Video & Sophisticated Overlays */}
             <div className="absolute inset-0 overflow-hidden">
                 <img
@@ -32,27 +37,24 @@ export default function Hero() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-blue-50/80 backdrop-blur border border-blue-100/50 rounded-full mb-10 shadow-sm"
+                        className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-blue-50 rounded-full mb-10 shadow-sm"
                     >
-                        <div className="flex h-2 w-2 relative">
-                            <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></div>
-                            <div className="relative inline-flex rounded-full h-2 w-2 bg-[#004f8a]"></div>
-                        </div>
-                        <span className="text-[12px] font-bold text-[#004f8a] uppercase tracking-[0.1em]">
+                        <span className="w-1.5 h-1.5 bg-[#004f8a] rounded-full" />
+                        <span className="text-sm font-bold text-[#004f8a] uppercase tracking-[0.1em]">
                             The New Standard in Preconstruction
                         </span>
                     </motion.div>
 
                     {/* Main Headline */}
-                    <div className="max-w-4xl mb-10">
-                        <h1 className="text-5xl md:text-7xl lg:text-[90px] font-bold text-slate-900 tracking-[-0.03em] leading-[1.1] font-suisse">
+                    <div className="max-w-full mb-10">
+                        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px] 2xl:text-[90px] font-bold text-slate-900 tracking-[-0.03em] leading-[1.1] font-suisse">
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.1 }}
                                 className="block"
                             >
-                                AI-Powered Preconstruction
+                                AI-Powered Preconstruction Risk
                             </motion.span>
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}
@@ -60,7 +62,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="block text-gradient-blue italic"
                             >
-                                Risk Management Platform
+                                Management Platform
                             </motion.span>
                         </h1>
                     </div>
@@ -70,10 +72,11 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-lg md:text-2xl text-slate-500 mb-12 max-w-3xl font-light leading-relaxed text-balance"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-500 mb-12 max-w-3xl font-light leading-relaxed text-balance"
                     >
-                        Analyze plans, identify risks, and automate scope extraction with human-like precision.
-                        <span className="text-slate-900 font-medium"> Stop reviewing documents manually.</span>
+                        Transform drawings & specifications into structured scopes, risk insights, and traceable decisions — automatically.
+                        <br /><br />
+                        <span className="text-slate-900 font-medium">Wyre AI</span> helps contractors identify scope gaps, reduce RFIs, and protect margins before construction even begins.
                     </motion.p>
 
                     {/* Premium CTA Group */}
@@ -122,7 +125,7 @@ export default function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Trusted By - Enhanced Horizontal Scale */}
+                    {/* Trusted By - Infinite Carousel */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -130,14 +133,29 @@ export default function Hero() {
                         className="mt-16 w-full pt-12 border-t border-slate-100/50"
                     >
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-12">Trusted by Global Infrastructure Leaders</p>
-                        <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 grayscale-[0.8] opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-                            {[
-                                { name: 'DCI', src: dciImg, h: "h-14" },
-                                { name: 'Howard Shockey', src: shockeyImg, h: "h-12" },
-                                { name: 'MCN Build', src: mcnImg, h: "h-12" }
-                            ].map((logo) => (
-                                <img key={logo.name} src={logo.src} alt={logo.name} className={`${logo.h} w-auto object-contain transition-all duration-300 hover:scale-105`} />
-                            ))}
+                        <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                            <div className="flex items-center gap-x-12 sm:gap-x-16 grayscale opacity-60 animate-scroll w-max">
+                                {[
+                                    { name: 'DCI', src: dciImg, h: "h-14" },
+                                    { name: 'Howard Shockey', src: shockeyImg, h: "h-12" },
+                                    { name: 'MCN Build', src: mcnImg, h: "h-12" },
+                                    { name: 'BEK', src: bekImg, h: "h-12" },
+                                    { name: 'Carlson', src: carlsonImg, h: "h-12" },
+                                    { name: 'Kulka', src: kulkaImg, h: "h-12" },
+                                    { name: 'Miller Davis', src: millerDavisImg, h: "h-12" },
+                                    { name: 'Winmar', src: winmarImg, h: "h-12" },
+                                    { name: 'DCI', src: dciImg, h: "h-14" },
+                                    { name: 'Howard Shockey', src: shockeyImg, h: "h-12" },
+                                    { name: 'MCN Build', src: mcnImg, h: "h-12" },
+                                    { name: 'BEK', src: bekImg, h: "h-12" },
+                                    { name: 'Carlson', src: carlsonImg, h: "h-12" },
+                                    { name: 'Kulka', src: kulkaImg, h: "h-12" },
+                                    { name: 'Miller Davis', src: millerDavisImg, h: "h-12" },
+                                    { name: 'Winmar', src: winmarImg, h: "h-12" }
+                                ].map((logo, i) => (
+                                    <img key={`${logo.name}-${i}`} src={logo.src} alt={logo.name} className={`${logo.h} w-auto object-contain flex-shrink-0`} />
+                                ))}
+                            </div>
                         </div>
                     </motion.div>
 

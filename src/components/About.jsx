@@ -36,12 +36,12 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
-    <section ref={containerRef} id="about" className="py-24 bg-white overflow-hidden border-t border-slate-100 relative">
+    <section ref={containerRef} id="about" className="py-16 lg:py-24 bg-white overflow-hidden border-t border-slate-100 relative">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -49,55 +49,34 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50/80 backdrop-blur rounded-full mb-6 border border-blue-100">
-               <span className="w-1.5 h-1.5 bg-[#004f8a] rounded-full animate-pulse" />
-               <span className="text-xs font-bold text-[#004f8a] uppercase tracking-wide">Who We Are</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 rounded-full mb-6">
+               <span className="w-1.5 h-1.5 bg-[#FF6B35] rounded-full" />
+               <span className="text-xs font-bold text-[#FF6B35] uppercase tracking-wide">Who We Are</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-suisse tracking-tight uppercase leading-none">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004f8a] to-[#0066a8]">Wyre AI</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 font-suisse tracking-tight uppercase leading-tight">
+              Built by Builders. Powered by AI. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004f8a] to-[#0066a8]">Focused on Preconstruction.</span>
             </h2>
-            
+
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-light">
-              <p>
-                Wyre AI was founded by construction veterans and AI researchers with a single mission: to eliminate the manual grunt work in preconstruction.
+              <p className="italic text-slate-700 border-l-4 border-[#004f8a] pl-4">
+                "The biggest risk in construction isn't what happens in the field — it's what gets overlooked and or missed in the documents before the shovel hits the ground."
               </p>
               <p>
-                We understand that every minute spent manually reviewing drawings or highlighting contracts is a minute lost on strategic decision-making. Our technology doesn't just digitize documents; it understands them.
+                Wyre AI was created to solve real-world preconstruction challenges. We combine <span className="font-medium">deep industry expertise</span> with <span className="font-medium">cutting-edge AI</span> to help teams <span className="font-medium">plan smarter, work faster, and reduce risk</span> — long before the first shovel hits the ground.
+              </p>
+              <p>
+                <span className="text-slate-900 font-medium">We're not just another AI company.</span><br />
+                We're construction industry experts building intelligent solutions to solve real problems.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t border-slate-100 pt-8">
-                <div>
-                   <div className="text-4xl font-bold text-[#004f8a] mb-1 tracking-tighter flex items-center">
-                     <Counter value="1000" suffix="M+" />
-                   </div>
-                   <div className="text-xs font-bold uppercase tracking-widest text-slate-400">Pages Processed</div>
-                </div>
-                <div>
-                   <div className="text-4xl font-bold text-[#004f8a] mb-1 tracking-tighter flex items-center">
-                     <Counter value="99.9" suffix="%" />
-                   </div>
-                   <div className="text-xs font-bold uppercase tracking-widest text-slate-400">Uptime</div>
-                </div>
-            </div>
-            
-            <div className="mt-10">
-              <a href="#contact" className="group inline-flex items-center gap-2 text-[#004f8a] font-semibold text-sm uppercase tracking-wide">
-                <span className="border-b border-transparent group-hover:border-[#004f8a] transition-colors">Meet the Team</span>
-                <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#004f8a] group-hover:text-white transition-all">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </a>
-            </div>
           </motion.div>
 
           {/* Image with Parallax */}
           <motion.div
             style={{ y }}
-            className="relative lg:h-[600px]"
+            className="relative lg:h-[450px] xl:h-[600px]"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent rounded-2xl -rotate-3 scale-[1.02] blur-sm" />
             <motion.div 

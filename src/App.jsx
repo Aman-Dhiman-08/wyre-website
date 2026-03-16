@@ -4,6 +4,8 @@ import WhyWyre from './components/WhyWyre';
 import Products from './components/Products';
 import WhatWeDo from './components/WhatWeDo';
 import About from './components/About';
+import HowItWorks from './components/HowItWorks';
+import Founder from './components/Founder';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -16,12 +18,18 @@ function App() {
         
         {/* Intro / Who We Are */}
         <About />
+
+        {/* About Our Founder */}
+        <Founder />
         
         {/* Why Wyre (Blue Bar) */}
         <WhyWyre />
 
         {/* What We Do (Minimal Grid) */}
         <WhatWeDo />
+
+        {/* How It Works */}
+        <HowItWorks />
 
         {/* Product (App Shell) */}
         <Products />
