@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView, useSpring, AnimatePresence } from 'framer-motion';
 
 function Counter({ value, suffix = '', delay = 0 }) {
   const ref = useRef(null);
@@ -27,12 +27,29 @@ function Counter({ value, suffix = '', delay = 0 }) {
   return <span ref={ref}>{displayValue}{suffix}</span>;
 }
 
+const roles = [
+  'General Contractors',
+  'Subcontractors',
+  'Estimators',
+  'Preconstruction Managers',
+];
+
 export default function WhyWyre() {
+  const [roleIndex, setRoleIndex] = useState(0);
   const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
+
+  useEffect(() => {
+    if (!isInView) return;
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [isInView]);
 
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
 
@@ -53,15 +70,33 @@ export default function WhyWyre() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-blue-400/30">
           <div className="md:pr-8 md:text-right flex flex-col justify-center">
-            <motion.h3
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-2xl font-bold tracking-tight mb-2 leading-tight"
             >
-              Why General Contractors choose Wyre
-            </motion.h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-2 leading-tight">
+                Why
+              </h3>
+              <div className="relative h-9 overflow-hidden mb-2">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={roleIndex}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -24 }}
+                    transition={{ duration: 0.35, ease: 'easeInOut' }}
+                    className="absolute right-0 md:right-0 text-2xl font-bold tracking-tight text-white whitespace-nowrap"
+                  >
+                    {roles[roleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight leading-tight">
+                choose Wyre
+              </h3>
+            </motion.div>
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}

@@ -39,7 +39,6 @@ export default function Hero() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-blue-50 rounded-full mb-10 shadow-sm"
                     >
-                        <span className="w-1.5 h-1.5 bg-[#004f8a] rounded-full" />
                         <span className="text-sm font-bold text-[#004f8a] uppercase tracking-[0.1em]">
                             The New Standard in Preconstruction
                         </span>

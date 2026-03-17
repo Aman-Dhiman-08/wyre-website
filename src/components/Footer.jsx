@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           <div className="col-span-2 lg:col-span-2">
             <a href="#home" className="inline-flex items-center gap-2 mb-6">
-              <Logo className="h-8 w-auto" forceColor="white" />
+              <Logo className="h-8 w-auto" forceColor="white" buildingOrange />
             </a>
             <p className="text-slate-300 leading-relaxed max-w-sm text-sm mb-6">
               The AI-Powered Preconstruction Risk Management Platform.
