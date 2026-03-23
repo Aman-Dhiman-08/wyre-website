@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @font-face {
   font-family: 'Suisse Intl';
@@ -128,6 +128,30 @@ h1, h2, h3, h4, h5, h6 {
     animation: scroll 25s linear infinite;
     will-change: transform;
   }
+}
+
+/* C5C Specifics */
+.c5c-grid {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.c5c-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, #f2f2f2 1px, transparent 1px),
+    linear-gradient(to bottom, #f2f2f2 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 55%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.font-jakarta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 @keyframes scroll {
