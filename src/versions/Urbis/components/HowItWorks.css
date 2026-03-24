@@ -1,0 +1,292 @@
+/* ============================================
+   URBIS HOW IT WORKS — Fixed Scroll Pinned Stacking
+   ============================================ */
+
+.urbis-hiw {
+  /* Scroll distance to complete 4 card stacking */
+  height: 400vh;
+  position: relative;
+  background-color: var(--urbis-gold, #F0EBE3);
+  overflow: clip; /* Clean clip while pinning */
+}
+
+.urbis-hiw__sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.urbis-hiw__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .urbis-hiw__container {
+    grid-template-columns: 0.45fr 0.55fr;
+    gap: 7rem;
+  }
+}
+
+/* ============================
+   Left — Static Context
+   ============================ */
+
+.urbis-hiw__content-left {
+  position: relative;
+  z-index: 10;
+}
+
+.urbis-hiw__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--urbis-text-dark, #1a1a1a);
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.urbis-hiw__eyebrow-dash {
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+}
+
+.urbis-hiw__headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--urbis-text-dark, #1a1a1a);
+  margin-bottom: 2rem;
+}
+
+.urbis-hiw__headline-accent {
+  color: var(--urbis-accent, #FF6B35);
+}
+
+.urbis-hiw__subtitle {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--urbis-text-body, #4a4a4a);
+  max-width: 420px;
+  margin-bottom: 3.5rem;
+}
+
+/* Scroll progress bar */
+.urbis-hiw__progress-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0.5;
+}
+
+.urbis-hiw__progress-track {
+  width: 2px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.08);
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.urbis-hiw__progress-bar {
+  position: absolute;
+  inset: 0;
+  background-color: var(--urbis-accent, #FF6B35);
+  transform-origin: top;
+}
+
+.urbis-hiw__progress-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--urbis-text-dark);
+}
+
+/* ============================
+   Right — Stacking Cards
+   ============================ */
+
+.urbis-hiw__stack-area {
+  position: relative;
+  width: 100%;
+  /* Must match the max-height of our cards to allow perfect stacking */
+  height: 520px; 
+}
+
+.urbis-hiw__card-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.urbis-hiw__step-card {
+  background-color: #181818;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1.1 / 1;
+  border-radius: 1.75rem;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 40px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Subtle blueprint grid */
+.urbis-hiw__card-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at top right, rgba(255, 107, 53, 0.1) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 3.5rem 3.5rem, 3.5rem 3.5rem;
+  pointer-events: none;
+}
+
+.urbis-hiw__card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.urbis-hiw__step-num {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--urbis-accent, #FF6B35);
+  margin-bottom: 2.25rem;
+}
+
+.urbis-hiw__step-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 1.75rem;
+}
+
+.urbis-hiw__step-text {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 380px;
+}
+
+/* Accent corner details */
+.urbis-hiw__card-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  pointer-events: none;
+}
+
+.urbis-hiw__card-line-h {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 1.5px;
+  background-color: var(--urbis-accent, #FF6B35);
+  opacity: 0.4;
+}
+
+.urbis-hiw__card-line-v {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: 1.5px;
+  height: 3rem;
+  background-color: var(--urbis-accent, #FF6B35);
+  opacity: 0.4;
+}
+
+/* ============================
+   Mobile Adjustments
+   ============================ */
+
+@media (max-width: 767px) {
+  .urbis-hiw {
+    height: auto;
+    padding: 6rem 0;
+  }
+  
+  .urbis-hiw__sticky-wrapper {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .urbis-hiw__stack-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto; /* Standard vertical flow on mobile */
+  }
+
+  .urbis-hiw__card-outer {
+    position: relative;
+    transform: none !important;
+    opacity: 1 !important;
+    scale: 1 !important;
+    height: auto;
+  }
+
+  .urbis-hiw__step-card {
+    aspect-ratio: auto;
+    min-height: 400px;
+    padding: 3.5rem 2rem;
+  }
+  
+  .urbis-hiw__step-title {
+    font-size: 1.875rem;
+  }
+  
+  .urbis-hiw__progress-info {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .urbis-hiw__step-card {
+    padding: 2.5rem 1.75rem;
+    min-height: auto;
+  }
+
+  .urbis-hiw__step-title {
+    font-size: 1.5rem;
+  }
+}

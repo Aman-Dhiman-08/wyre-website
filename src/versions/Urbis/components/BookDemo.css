@@ -1,0 +1,203 @@
+/* ============================================
+   URBIS BOOK DEMO — Consultation Stage
+   ============================================ */
+
+.urbis-demo {
+  background-color: var(--urbis-gold, #F0EBE3);
+  padding: 8rem 0;
+  width: 100%;
+}
+
+.urbis-demo__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.urbis-demo__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .urbis-demo__grid {
+    flex-direction: row;
+    gap: 10rem;
+    align-items: center;
+  }
+}
+
+/* ============================
+   Left: Product Info
+   ============================ */
+
+.urbis-demo__info {
+  flex: 1;
+  max-width: 600px;
+}
+
+.urbis-demo__eyebrow {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #FF6B35;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.urbis-demo__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1a1a1a;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.5rem;
+}
+
+.urbis-demo__title-accent {
+  opacity: 0.4;
+  font-weight: 400;
+}
+
+.urbis-demo__desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.urbis-demo__sub-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  opacity: 0.8;
+}
+
+/* ============================
+   Right: The Form Card (BLACK OVERRIDE)
+   ============================ */
+
+.urbis-demo__form-card {
+  flex: 1;
+  max-width: 620px;
+  background-color: #141414; /* Deep Enterprise Black */
+  padding: 4rem;
+  border-radius: 2.5rem;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+}
+
+.urbis-demo__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.urbis-demo__field-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.urbis-demo__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.urbis-demo__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #FF6B35;
+  text-transform: uppercase;
+}
+
+.urbis-demo__input {
+  width: 100%;
+  padding: 0.75rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(255,255,255,0.15);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff; /* White text on black form */
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.urbis-demo__input:focus {
+  border-bottom-color: #FF6B35;
+  transform: translateY(-2px);
+}
+
+.urbis-demo__input::placeholder {
+  color: rgba(255,255,255,0.25);
+  font-weight: 400;
+}
+
+.urbis-demo__input--textarea {
+  resize: none;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+  background: rgba(255,255,255,0.03);
+}
+
+.urbis-demo__input--textarea:focus {
+  border-color: #FF6B35;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Submit Button */
+.urbis-demo__submit {
+  background-color: #FF6B35;
+  color: #ffffff;
+  padding: 1.25rem 3rem;
+  border-radius: 99px; /* Modern pill style on dark form */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-top: 1.5rem;
+  box-shadow: 0 20px 40px rgba(255,107,53,0.3);
+}
+
+.urbis-demo__submit:hover {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(255,255,255,0.1);
+}
+
+/* Form Corners */
+.urbis-corner {
+  position: absolute; width: 5rem; height: 5rem;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+.urbis-corner--tl { top: -1rem; left: -1rem; border-right: none; border-bottom: none; }
+.urbis-corner--br { bottom: -1rem; right: -1rem; border-left: none; border-top: none; }
+
+/* ============================
+   Mobile Adjustments
+   ============================ */
+
+@media (max-width: 767px) {
+  .urbis-demo { padding: 4rem 0; }
+  .urbis-demo__form-card { padding: 3rem 1.5rem; border-radius: 2rem; }
+  .urbis-demo__field-group { grid-template-columns: 1fr; gap: 2rem; }
+  .urbis-demo__submit { width: 100%; }
+}

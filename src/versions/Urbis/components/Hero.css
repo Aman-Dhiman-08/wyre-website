@@ -1,0 +1,592 @@
+/* ============================================
+   URBIS HERO — CONS-Style Split Layout
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* --- Color Tokens --- */
+:root {
+  --urbis-bg-dark: #1e1e1e;
+  --urbis-bg-darker: #181818;
+  --urbis-gold: #F0EBE3;
+  --urbis-gold-hover: #E5DED4;
+  --urbis-gold-light: #F7F4EF;
+  --urbis-card-dark: #2a2a2a;
+  --urbis-text-dark: #1a1a1a;
+  --urbis-text-body: #4a4a4a;
+  --urbis-text-light: #e0e0e0;
+  --urbis-text-muted-light: #a0a0a0;
+  --urbis-accent: #FF6B35;
+}
+
+/* ============================
+   Section Container
+   ============================ */
+.urbis-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: var(--urbis-bg-darker);
+  padding: 0;
+}
+
+/* ============================
+   Outer Frame (Dark with pattern)
+   ============================ */
+.urbis-hero__frame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.urbis-hero__frame-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 255, 255, 0.03) 60px,
+      rgba(255, 255, 255, 0.03) 61px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 255, 255, 0.03) 60px,
+      rgba(255, 255, 255, 0.03) 61px
+    );
+}
+
+/* ============================
+   Main Split Card
+   ============================ */
+.urbis-hero__card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__card {
+    grid-template-columns: 1fr 1.05fr;
+    min-height: 100vh;
+  }
+}
+
+/* ============================
+   LEFT PANEL — Gold
+   ============================ */
+.urbis-hero__left {
+  background-color: var(--urbis-gold);
+  padding: 2.5rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__left {
+    padding: 3rem 3.5rem 3.5rem;
+    padding-top: 2.5rem;
+  }
+}
+
+/* Logo */
+.urbis-hero__logo {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+}
+
+.urbis-hero__logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Center group */
+.urbis-hero__center-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Bottom group */
+.urbis-hero__bottom-group {
+  margin-top: auto;
+}
+
+/* Tagline */
+.urbis-hero__tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--urbis-text-dark);
+  opacity: 0.7;
+  margin-bottom: 1.25rem;
+}
+
+.urbis-hero__tagline-dash {
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  opacity: 0.5;
+}
+
+/* Headline */
+.urbis-hero__headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--urbis-text-dark);
+  margin-bottom: 1.75rem;
+}
+
+/* Description */
+.urbis-hero__description {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--urbis-text-body);
+  max-width: 480px;
+  margin-bottom: 2.25rem;
+}
+
+/* CTA Buttons */
+.urbis-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  align-items: center;
+}
+
+.urbis-hero__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--urbis-text-dark);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.urbis-hero__cta-primary:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.urbis-hero__cta-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.urbis-hero__cta-primary:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.urbis-hero__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: transparent;
+  border: 1.5px solid var(--urbis-text-dark);
+  color: var(--urbis-text-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.urbis-hero__cta-secondary:hover {
+  background-color: var(--urbis-text-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.urbis-hero__play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--urbis-text-dark);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.urbis-hero__cta-secondary:hover .urbis-hero__play-icon {
+  background-color: var(--urbis-gold);
+  color: var(--urbis-text-dark);
+}
+
+/* ============================
+   RIGHT PANEL — Image
+   ============================ */
+.urbis-hero__right {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__right {
+    min-height: auto;
+  }
+}
+
+/* Image */
+.urbis-hero__image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.urbis-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 8s ease-out;
+}
+
+.urbis-hero:hover .urbis-hero__image {
+  transform: scale(1.03);
+}
+
+.urbis-hero__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.15) 70%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+/* ============================
+   Navigation (Over image)
+   ============================ */
+.urbis-hero__nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__nav {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.urbis-hero__nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .urbis-hero__nav-links {
+    display: flex;
+  }
+}
+
+.urbis-hero__nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.urbis-hero__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--urbis-accent);
+  transition: width 0.3s ease;
+}
+
+.urbis-hero__nav-link:hover {
+  color: #ffffff;
+}
+
+.urbis-hero__nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact Us Button */
+.urbis-hero__nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--urbis-text-dark);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.urbis-hero__nav-cta:hover {
+  background-color: #000000;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ============================
+   Decorative Squares
+   ============================ */
+/* Modular Grid exactly as reference image */
+.urbis-hero__modular-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(4, 15px);
+  grid-template-rows: repeat(4, 15px);
+  gap: 0;
+}
+
+.urbis-hero__mod-block {
+  width: 100%;
+  height: 100%;
+}
+
+/* Was large, now small anchor block */
+.urbis-hero__mod-block--large {
+  grid-column: 1 / span 1;
+  grid-row: 4 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+.urbis-hero__mod-block--second-left {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+.urbis-hero__mod-block--mid-left {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+.urbis-hero__mod-block--mid-center {
+  grid-column: 4 / span 1;
+  grid-row: 3 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+.urbis-hero__mod-block--offset-right {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+.urbis-hero__mod-block--bottom-center {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  background-color: var(--urbis-gold);
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__modular-grid {
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(4, 20px);
+  }
+}
+
+/* ============================
+   Testimonial Card
+   ============================ */
+.urbis-hero__testimonial {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  width: 310px;
+  max-width: calc(100% - 3rem);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .urbis-hero__testimonial {
+    bottom: 2rem;
+    right: 2rem;
+    width: 320px;
+  }
+}
+
+/* Stars */
+.urbis-hero__testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+
+/* Text */
+.urbis-hero__testimonial-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #3d3d3d;
+  margin-bottom: 1rem;
+}
+
+/* Author */
+.urbis-hero__testimonial-author {
+  margin-bottom: 0.75rem;
+}
+
+.urbis-hero__testimonial-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--urbis-text-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.125rem;
+}
+
+.urbis-hero__testimonial-company {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 400;
+}
+
+/* Navigation Arrows */
+.urbis-hero__testimonial-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.urbis-hero__testimonial-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid #d0d0d0;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.urbis-hero__testimonial-btn:hover {
+  border-color: var(--urbis-text-dark);
+  color: var(--urbis-text-dark);
+}
+
+.urbis-hero__testimonial-btn--active {
+  background-color: var(--urbis-text-dark);
+  border-color: var(--urbis-text-dark);
+  color: #ffffff;
+}
+
+.urbis-hero__testimonial-btn--active:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ============================
+   Mobile Responsive
+   ============================ */
+@media (max-width: 1023px) {
+  .urbis-hero {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
+
+  .urbis-hero__left {
+    padding: 2rem 1.75rem 2.5rem;
+  }
+
+  .urbis-hero__logo {
+    margin-bottom: 2rem;
+  }
+
+  .urbis-hero__headline {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .urbis-hero__right {
+    min-height: 320px;
+  }
+
+  .urbis-hero__testimonial {
+    width: 260px;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .urbis-hero__ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .urbis-hero__cta-primary,
+  .urbis-hero__cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .urbis-hero__testimonial {
+    display: none;
+  }
+
+  .urbis-hero__decorative-squares {
+    display: none;
+  }
+}

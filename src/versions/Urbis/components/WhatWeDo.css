@@ -1,0 +1,198 @@
+/* ============================================
+   URBIS WHAT WE DO — Architectural Matrix
+   ============================================ */
+
+.urbis-wwd {
+  padding: 8rem 0;
+  background-color: #141414; /* Deep dark grey to contrast with the Process section */
+  position: relative;
+  overflow: hidden;
+}
+
+.urbis-wwd__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================
+   Header Block
+   ============================ */
+
+.urbis-wwd__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .urbis-wwd__header {
+    flex-direction: row;
+    gap: 6rem;
+    align-items: flex-start;
+  }
+}
+
+.urbis-wwd__label-group {
+  padding-top: 0.75rem;
+}
+
+.urbis-wwd__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+}
+
+.urbis-wwd__label-dash {
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+}
+
+.urbis-wwd__intro-group {
+  max-width: 680px;
+}
+
+.urbis-wwd__headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.urbis-wwd__headline-accent {
+  color: var(--urbis-accent, #FF6B35);
+}
+
+.urbis-wwd__subtitle {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 520px;
+}
+
+/* ============================
+   The Node Matrix
+   ============================ */
+
+.urbis-wwd__matrix {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 768px) {
+  .urbis-wwd__matrix {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.urbis-wwd__node {
+  padding: 3.5rem 2.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition: background 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.urbis-wwd__node:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.urbis-wwd__node-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--urbis-accent, #FF6B35);
+  background: rgba(255, 107, 53, 0.08);
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.urbis-wwd__node:hover .urbis-wwd__node-icon {
+  transform: translateY(-5px);
+  background: var(--urbis-accent, #FF6B35);
+  color: #ffffff;
+}
+
+.urbis-wwd__node-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.urbis-wwd__node-text {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 340px;
+}
+
+/* Architectural accent corner in node */
+.urbis-wwd__node-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  pointer-events: none;
+}
+
+.urbis-wwd__decor-line {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-top: 1px solid var(--urbis-accent, #FF6B35);
+  border-right: 1px solid var(--urbis-accent, #FF6B35);
+  opacity: 0.2;
+}
+
+.urbis-wwd__node:hover .urbis-wwd__decor-line {
+  opacity: 0.6;
+  transform: translate(-3px, 3px);
+  transition: all 0.4s ease;
+}
+
+/* ============================
+   Mobile
+   ============================ */
+
+@media (max-width: 767px) {
+  .urbis-wwd {
+    padding: 5rem 0;
+  }
+  
+  .urbis-wwd__header {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .urbis-wwd__node {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .urbis-wwd__node-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}

@@ -1,0 +1,164 @@
+/* ============================================
+   URBIS CONTACT — Premium Conclusion
+   ============================================ */
+
+.urbis-contact {
+  background-color: var(--urbis-gold, #F0EBE3);
+  padding: 4rem 0; /* Reduced top-padding to move it up */
+  width: 100%;
+}
+
+.urbis-contact__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================
+   The Big CTA Box
+   ============================ */
+
+.urbis-contact__box {
+  background-color: #141414; /* Deep Enterprise Navy / Dark Grey */
+  border-radius: 2.5rem;
+  padding: 8rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+}
+
+.urbis-contact__content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.urbis-contact__eyebrow {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #FF6B35;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.urbis-contact__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.5rem;
+}
+
+.urbis-contact__title-accent {
+  background: linear-gradient(90deg, #FF6B35, #E8632B);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+.urbis-contact__tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 4rem;
+}
+
+/* Contact Button */
+.urbis-contact__button {
+  display: inline-block;
+  background-color: #FF6B35;
+  color: #ffffff;
+  padding: 1.25rem 3.5rem;
+  border-radius: 99px; /* Modern pill style */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+}
+
+.urbis-contact__button:hover {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15);
+}
+
+/* ============================
+   Architectural Details
+   ============================ */
+
+.urbis-contact__grid {
+  position: absolute; inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,107,53,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,53,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.urbis-contact__corner {
+  position: absolute; width: 6rem; height: 6rem;
+  border: 2px solid rgba(255,107,53,0.1);
+  pointer-events: none;
+}
+.urbis-contact__corner--tl { top: 3.5rem; left: 3.5rem; border-right: none; border-bottom: none; }
+.urbis-contact__corner--br { bottom: 3.5rem; right: 3.5rem; border-left: none; border-top: none; }
+
+/* ============================
+   Brand Footer Small
+   ============================ */
+
+.urbis-contact__footer-info {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.urbis-contact__footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.urbis-contact__brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: #1a1a1a;
+  opacity: 0.4;
+}
+
+.urbis-contact__copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  opacity: 0.3;
+}
+
+/* ============================
+   Mobile Adjustments
+   ============================ */
+
+@media (max-width: 767px) {
+  .urbis-contact { padding: 4rem 0; }
+  .urbis-contact__box { padding: 4rem 1.5rem; border-radius: 1.5rem; }
+  .urbis-contact__title { margin-bottom: 2rem; }
+  .urbis-contact__button { width: 100%; padding: 1.25rem 1.5rem; text-align: center; }
+  .urbis-contact__footer-wrap { justify-content: center; text-align: center; }
+}

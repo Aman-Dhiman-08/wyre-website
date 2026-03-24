@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyWyre from './components/WhyWyre';
@@ -8,8 +9,9 @@ import HowItWorks from './components/HowItWorks';
 import Founder from './components/Founder';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import UrbisPage from './versions/Urbis/UrbisPage';
 
-function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -39,6 +41,17 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/urbis" element={<UrbisPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

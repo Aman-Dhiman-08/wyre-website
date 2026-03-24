@@ -1,0 +1,174 @@
+/* ============================================
+   URBIS CAROUSEL — Dark Section
+   ============================================ */
+
+.urbis-carousel {
+  background-color: #141414;
+  padding: 3.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle top/bottom border accents */
+.urbis-carousel::before,
+.urbis-carousel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 107, 53, 0.3) 20%,
+    rgba(255, 107, 53, 0.5) 50%,
+    rgba(255, 107, 53, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.urbis-carousel::before { top: 0; }
+.urbis-carousel::after { bottom: 0; }
+
+/* ============================
+   Text Marquee
+   ============================ */
+.urbis-carousel__marquee-row {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.urbis-carousel__marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  will-change: transform;
+}
+
+.urbis-carousel__marquee-track--ltr {
+  animation: urbis-scroll-ltr 35s linear infinite;
+}
+
+.urbis-carousel__marquee-track--rtl {
+  animation: urbis-scroll-rtl 40s linear infinite;
+}
+
+@keyframes urbis-scroll-ltr {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes urbis-scroll-rtl {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Marquee items */
+.urbis-carousel__marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.urbis-carousel__marquee-item--outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+}
+
+.urbis-carousel__marquee-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 53, 0.3);
+  flex-shrink: 0;
+  box-shadow: none;
+}
+
+.urbis-carousel__marquee-item--outline .urbis-carousel__marquee-dot {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+/* ============================
+   Logo Carousel (center)
+   ============================ */
+.urbis-carousel__logos {
+  padding: 2.5rem 0;
+}
+
+.urbis-carousel__logos-label {
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.urbis-carousel__logos-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.urbis-carousel__logos-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: urbis-logos-scroll 30s linear infinite;
+}
+
+.urbis-carousel__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+.urbis-carousel__logo-img:hover {
+  opacity: 1;
+}
+
+@keyframes urbis-logos-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/* ============================
+   Mobile
+   ============================ */
+@media (max-width: 767px) {
+  .urbis-carousel {
+    padding: 2.5rem 0;
+  }
+
+  .urbis-carousel__marquee-item {
+    font-size: 1rem;
+    padding: 0 1.25rem;
+  }
+
+  .urbis-carousel__logos {
+    padding: 1.5rem 0;
+  }
+
+  .urbis-carousel__logo-img {
+    height: 22px;
+    gap: 2rem;
+  }
+}

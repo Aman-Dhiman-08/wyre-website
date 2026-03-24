@@ -1,0 +1,179 @@
+/* ============================================
+   URBIS METRICS — RESTORED DARK STYLE
+   ============================================ */
+
+.urbis-metrics {
+  background-color: #0d0d0d; /* Original Deep Navy/Black */
+  padding: 10rem 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.urbis-metrics__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Original Blueprint Grid */
+.urbis-metrics__blueprint {
+  position: absolute; inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,107,53,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,53,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Faint vertical accent line from original */
+.urbis-metrics__accent-line {
+  position: absolute;
+  top: 0; left: 15%; width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255,107,53,0.1), transparent);
+  pointer-events: none;
+}
+
+/* ---- Eyebrow ---- */
+.urbis-metrics__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FF6B35;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.urbis-metrics__eyebrow-dash {
+  opacity: 0.2;
+}
+
+/* ---- Headline ---- */
+.urbis-metrics__headline {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  margin-bottom: 7rem;
+}
+
+.urbis-metrics__headline-accent {
+  opacity: 0.3;
+  font-weight: 400;
+}
+
+/* ============================
+   The 4-Column Stats Row (RESTORED DARK)
+   ============================ */
+
+.urbis-metrics__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 6rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .urbis-metrics__stats {
+    flex-wrap: nowrap; /* Single line on desktop */
+    gap: 1rem;
+  }
+}
+
+.urbis-metrics__stat {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Vertical divider between stats */
+@media (min-width: 1024px) {
+  .urbis-metrics__stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 15%; right: 0; width: 1px; height: 70%;
+    background: rgba(255,255,255,0.06);
+  }
+}
+
+.urbis-metrics__stat-number {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.urbis-metrics__stat-value {
+  font-size: clamp(4rem, 6vw, 6.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.urbis-metrics__stat-suffix {
+  color: #FF6B35;
+  margin-left: 0.1em;
+}
+
+.urbis-metrics__stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.urbis-metrics__stat-desc {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+
+/* ============================
+   Restored Summary Tagline
+   ============================ */
+
+.urbis-metrics__summary {
+  margin-top: 4rem;
+  text-align: center;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.urbis-metrics__summary-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-style: italic;
+  font-weight: 600;
+  color: #FF6B35;
+}
+
+.urbis-metrics__summary-text span {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+  .urbis-metrics { padding: 5rem 0; }
+  .urbis-metrics__headline { margin-bottom: 4rem; }
+  .urbis-metrics__stat { margin-bottom: 4rem; }
+}
