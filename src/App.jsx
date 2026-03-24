@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyWyre from './components/WhyWyre';
@@ -46,12 +46,12 @@ function HomePage() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/urbis" element={<UrbisPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
